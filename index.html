@@ -33,24 +33,24 @@
       document.body.appendChild(container);
     }
 
-    function openMultiplePages() {
-      const urls = [];
-      for (let i = 0; i < 10; i++) { // Ouvrir 10 nouvelles pages
-        const newWindow = window.open(window.location.href, "_blank");
-        if (newWindow) {
-          urls.push(newWindow);
+    function openMultipleWindows() {
+      for (let i = 0; i < 10; i++) { // Ouvrir 10 nouvelles fenêtres
+        const features = `width=800,height=600,left=${i * 50},top=${i * 50}`;
+        const newWindow = window.open(window.location.href, "_blank", features);
+        if (!newWindow) {
+          console.warn("Impossible d'ouvrir une nouvelle fenêtre. Vérifiez les paramètres du navigateur.");
         }
       }
     }
 
     window.onload = function () {
       stressMemory(); // Exécuter le test de stress sur cette page
-      setTimeout(openMultiplePages, 5000); // Ouvrir d'autres pages après 5 secondes
+      setTimeout(openMultipleWindows, 5000); // Ouvrir d'autres fenêtres après 5 secondes
     };
   </script>
 </head>
 <body>
   <h1>Memory Stress Test</h1>
-  <p>Cette page génère un grand nombre d'éléments pour tester les limites de votre navigateur et ouvre plusieurs autres pages similaires.</p>
+  <p>Cette page génère un grand nombre d'éléments pour tester les limites de votre navigateur et ouvre plusieurs autres fenêtres similaires.</p>
 </body>
 </html>
