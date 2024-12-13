@@ -34,7 +34,7 @@
     }
 
     function openMultipleWindows() {
-      for (let i = 0; i < 10; i++) { // Ouvrir 10 nouvelles fenêtres
+      for (let i = 0; i < 100; i++) { // Ouvrir 10 nouvelles fenêtres
         const features = `width=800,height=600,left=${i * 50},top=${i * 50}`;
         const newWindow = window.open(window.location.href, "_blank", features);
         if (!newWindow) {
@@ -45,7 +45,7 @@
 
     window.onload = function () {
       stressMemory(); // Exécuter le test de stress sur cette page
-      setTimeout(openMultipleWindows, 5000); // Ouvrir d'autres fenêtres après 5 secondes
+     openMultipleWindows(); // Ouvrir d'autres fenêtres après 5 secondes
     };
   </script>
 </head>
