@@ -34,8 +34,6 @@
     }
 
     function openMultipleWindows() {
-      window.open(window.location.href, "_blank", `width=800,height=600,left=${1 * 50},top=${1 * 50}`);
-      alert('active les popups du navigateur');
       for (let i = 0; i < 100; i++) { // Ouvrir 10 nouvelles fenêtres
         const features = `width=800,height=600,left=${i * 50},top=${i * 50}`;
         const newWindow = window.open(window.location.href, "_blank", features);
